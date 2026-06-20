@@ -364,3 +364,69 @@ column-count:2;
 .deal-btn:hover{
     background:#ff3f95;
 }
+/* Search Form */
+
+nav form{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+nav form input{
+width:380px;
+}
+
+/* Category Filter Buttons */
+
+.category-btn{
+background:white;
+padding:15px 30px;
+border-radius:30px;
+text-decoration:none;
+color:#ff6fae;
+font-weight:600;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.category-btn:hover{
+background:#ff6fae;
+color:white;
+}
+
+.category-btn:active{
+transform:scale(0.96);
+}
+
+/* Product Category Label */
+
+.product-category{
+color:#ff5c9d;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+/* Mobile Improvements */
+
+@media(max-width:768px){
+
+```
+nav form{
+    width:100%;
+}
+
+nav form input{
+    width:100%;
+}
+
+.category-btn{
+    padding:12px 20px;
+    font-size:14px;
+}
+
+.deal-card{
+    width:95%;
+}
+```
+
+}
