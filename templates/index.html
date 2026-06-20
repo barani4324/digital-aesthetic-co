@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -7,185 +6,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Aesthetic Co</title>
 
-```
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-```
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-```
-<div class="heart heart1">💖</div>
-<div class="heart heart2">💕</div>
-<div class="heart heart3">💗</div>
-<div class="heart heart4">💖</div>
-<div class="heart heart5">💕</div>
-<div class="heart heart6">💗</div>
+    <!-- Floating Hearts -->
 
-<div class="top-banner">
-    💘 New Deals Added Daily • Fashion • Beauty • Lifestyle 💘
-</div>
+    <div class="heart heart1">💖</div>
+    <div class="heart heart2">💕</div>
+    <div class="heart heart3">💗</div>
+    <div class="heart heart4">💖</div>
+    <div class="heart heart5">💕</div>
+    <div class="heart heart6">💗</div>
 
-<nav>
+    <!-- Top Banner -->
 
-    <div class="logo">
-        💕 Digital Aesthetic Co
+    <div class="top-banner">
+        💘 New Deals Added Daily • Fashion • Beauty • Lifestyle 💘
     </div>
 
-    <form action="/" method="GET">
+    <!-- Navbar -->
 
-        <input
-            type="text"
-            name="search"
-            placeholder="Search your favorite deals..."
-            class="search-bar"
-            value="{{ search if search else '' }}">
+    <nav>
 
-    </form>
-
-    <ul>
-        <li>Fashion</li>
-        <li>Beauty</li>
-        <li>Accessories</li>
-        <li>Tech</li>
-    </ul>
-
-</nav>
-
-<section class="hero">
-
-    <h1>Discover Beautiful Pinterest Finds 💖</h1>
-
-    <p>
-        Fashion • Beauty • Accessories • Lifestyle Deals
-    </p>
-
-    <button class="hero-btn">
-        Explore Deals
-    </button>
-
-</section>
-
-<section class="categories">
-
-    <button>👗 Fashion</button>
-    <button>💄 Beauty</button>
-    <button>👜 Accessories</button>
-    <button>📱 Tech</button>
-    <button>🏠 Home</button>
-
-</section>
-
-<section class="section-title">
-    🔥 Trending Deals Today
-</section>
-
-<div class="deal-container">
-
-    {% if products %}
-
-        {% for product in products %}
-
-        <div class="deal-card">
-
-            <img
-                src="{{ url_for('static', filename='uploads/' + product.image) }}"
-                alt="{{ product.title }}">
-
-            <h3 class="product-title">
-                {{ product.title }}
-            </h3>
-
-            <p class="price">
-                ₹{{ product.price }}
-            </p>
-
-            <a
-                href="{{ product.affiliate_link }}"
-                target="_blank"
-                class="deal-btn">
-
-                🛍️ Shop Now
-
-            </a>
-
+        <div class="logo">
+            💕 Digital Aesthetic Co
         </div>
 
-        {% endfor %}
+        <form action="/" method="GET">
 
-    {% else %}
+            <input
+                type="text"
+                name="search"
+                placeholder="Search your favorite deals..."
+                class="search-bar"
+                value="{{ search if search else '' }}">
 
-        <div style="text-align:center;width:100%;padding:40px;">
+        </form>
 
-            <h3>No Products Found</h3>
+        <ul>
+            <li>Fashion</li>
+            <li>Beauty</li>
+            <li>Accessories</li>
+            <li>Tech</li>
+        </ul>
 
-            <p>Try another search keyword.</p>
+    </nav>
 
-        </div>
+    <!-- Hero -->
 
-    {% endif %}
+    <section class="hero">
 
-</div>
+        <h1>Discover Beautiful Pinterest Finds 💖</h1>
 
-<section class="section-title">
-    💕 Pinterest Inspiration
-</section>
+        <p>
+            Fashion • Beauty • Accessories • Lifestyle Deals
+        </p>
 
-<div class="pinterest-grid">
-
-    <div class="pin-card">
-        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800">
-    </div>
-
-    <div class="pin-card">
-        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800">
-    </div>
-
-    <div class="pin-card">
-        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800">
-    </div>
-
-    <div class="pin-card">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
-    </div>
-
-</div>
-
-<section class="newsletter">
-
-    <h2>✨ Never Miss A Deal</h2>
-
-    <p>Get daily fashion and beauty deals.</p>
-
-    <div class="newsletter-box">
-
-        <input
-            type="email"
-            placeholder="Enter your email">
-
-        <button>
-            Subscribe
+        <button class="hero-btn">
+            Explore Deals
         </button>
 
+    </section>
+
+    <!-- Categories -->
+
+    <section class="categories">
+
+        <button>👗 Fashion</button>
+        <button>💄 Beauty</button>
+        <button>👜 Accessories</button>
+        <button>📱 Tech</button>
+        <button>🏠 Home</button>
+
+    </section>
+
+    <!-- Products -->
+
+    <section class="section-title">
+        🔥 Trending Deals Today
+    </section>
+
+    <div class="deal-container">
+
+        {% if products %}
+
+            {% for product in products %}
+
+            <div class="deal-card">
+
+                <img
+                    src="{{ url_for('static', filename='uploads/' + product.image) }}"
+                    alt="{{ product.title }}">
+
+                <h3 class="product-title">
+                    {{ product.title }}
+                </h3>
+
+                <p class="price">
+                    ₹{{ product.price }}
+                </p>
+
+                <a
+                    href="{{ product.affiliate_link }}"
+                    target="_blank"
+                    class="deal-btn">
+
+                    🛍️ Shop Now
+
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div style="text-align:center;width:100%;padding:40px;">
+
+                <h3>No Products Found</h3>
+
+                <p>
+                    Add products from the Admin Panel.
+                </p>
+
+            </div>
+
+        {% endif %}
+
     </div>
 
-</section>
+    <!-- Pinterest Inspiration -->
 
-<footer>
+    <section class="section-title">
+        💕 Pinterest Inspiration
+    </section>
 
-    <h3>Digital Aesthetic Co</h3>
+    <div class="pinterest-grid">
 
-    <p>Daily Fashion • Beauty • Lifestyle Deals</p>
+        <div class="pin-card">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800" alt="">
+        </div>
 
-    <p>© 2026 All Rights Reserved</p>
+        <div class="pin-card">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800" alt="">
+        </div>
 
-</footer>
+        <div class="pin-card">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800" alt="">
+        </div>
 
-<a href="#" class="pinterest-btn">
-    📌
-</a>
-```
+        <div class="pin-card">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800" alt="">
+        </div>
+
+    </div>
+
+    <!-- Newsletter -->
+
+    <section class="newsletter">
+
+        <h2>✨ Never Miss A Deal</h2>
+
+        <p>
+            Get daily fashion and beauty deals.
+        </p>
+
+        <div class="newsletter-box">
+
+            <input
+                type="email"
+                placeholder="Enter your email">
+
+            <button>
+                Subscribe
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>Digital Aesthetic Co</h3>
+
+        <p>
+            Daily Fashion • Beauty • Lifestyle Deals
+        </p>
+
+        <p>
+            © 2026 All Rights Reserved
+        </p>
+
+    </footer>
+
+    <!-- Pinterest Button -->
+
+    <a href="#" class="pinterest-btn">
+        📌
+    </a>
 
 </body>
 
