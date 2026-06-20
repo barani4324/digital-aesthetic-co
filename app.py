@@ -28,7 +28,6 @@ def login():
         if username == "admin" and password == "12345":
 
             session["admin"] = True
-
             return redirect("/admin")
 
     return render_template("login.html")
@@ -40,31 +39,36 @@ def login():
 def logout():
 
     session.pop("admin", None)
-
     return redirect("/login")
 
 
-# HOME PAGE WITH SEARCH
+# HOME PAGE WITH SEARCH + CATEGORY FILTER
 
 @app.route("/")
 def home():
 
     search = request.args.get("search")
+    category = request.args.get("category")
+
+    products = Product.query
 
     if search:
-
-        products = Product.query.filter(
+        products = products.filter(
             Product.title.contains(search)
-        ).all()
+        )
 
-    else:
+    if category:
+        products = products.filter_by(
+            category=category
+        )
 
-        products = Product.query.all()
+    products = products.all()
 
     return render_template(
         "index.html",
         products=products,
-        search=search
+        search=search,
+        category=category
     )
 
 
@@ -96,6 +100,7 @@ def add_product():
 
         title = request.form["title"]
         price = request.form["price"]
+        category = request.form["category"]
         affiliate_link = request.form["affiliate_link"]
 
         image = request.files["image"]
@@ -119,6 +124,7 @@ def add_product():
             product = Product(
                 title=title,
                 price=price,
+                category=category,
                 image=filename,
                 affiliate_link=affiliate_link
             )

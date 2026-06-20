@@ -13,16 +13,27 @@
 
         form{
             background:white;
-            max-width:500px;
+            max-width:550px;
             margin:auto;
             padding:30px;
             border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,.1);
         }
 
-        input{
+        h2{
+            color:#ff5c9d;
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        input,
+        select{
             width:100%;
             padding:12px;
             margin-bottom:15px;
+            border:1px solid #ddd;
+            border-radius:8px;
+            box-sizing:border-box;
         }
 
         button{
@@ -32,6 +43,13 @@
             padding:12px 20px;
             border-radius:8px;
             cursor:pointer;
+            width:100%;
+            font-size:16px;
+            font-weight:bold;
+        }
+
+        button:hover{
+            background:#ff3f8b;
         }
 
     </style>
@@ -43,13 +61,37 @@
 
     <h2>Add New Product</h2>
 
-    <input type="text" name="title" placeholder="Product Title" required>
+    <input
+        type="text"
+        name="title"
+        placeholder="Product Title"
+        required>
 
-    <input type="text" name="price" placeholder="Price" required>
+    <input
+        type="text"
+        name="price"
+        placeholder="Price"
+        required>
 
-    <input type="text" name="affiliate_link" placeholder="Affiliate Link" required>
+    <select name="category" required>
+        <option value="">Select Category</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Beauty">Beauty</option>
+        <option value="Accessories">Accessories</option>
+        <option value="Tech">Tech</option>
+        <option value="Home">Home</option>
+    </select>
 
-    <input type="file" name="image" required>
+    <input
+        type="text"
+        name="affiliate_link"
+        placeholder="Affiliate Link"
+        required>
+
+    <input
+        type="file"
+        name="image"
+        required>
 
     <button type="submit">
         Save Product
