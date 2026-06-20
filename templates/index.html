@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Aesthetic Co</title>
+
+```
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+```
+
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+
+<div class="heart heart1">💖</div>
+<div class="heart heart2">💕</div>
+<div class="heart heart3">💗</div>
+<div class="heart heart4">💖</div>
+<div class="heart heart5">💕</div>
+<div class="heart heart6">💗</div>
+
+<!-- Top Banner -->
+
+<div class="top-banner">
+    💘 New Deals Added Daily • Fashion • Beauty • Lifestyle 💘
+</div>
+
+<!-- Navbar -->
+
+<nav>
+
+```
+<div class="logo">
+    💕 Digital Aesthetic Co
+</div>
+
+<input
+    type="text"
+    placeholder="Search your favorite deals..."
+    class="search-bar">
+
+<ul>
+    <li>Fashion</li>
+    <li>Beauty</li>
+    <li>Accessories</li>
+    <li>Tech</li>
+</ul>
+```
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+```
+<h1>Discover Beautiful Pinterest Finds 💖</h1>
+
+<p>
+    Fashion • Beauty • Accessories • Lifestyle Deals
+</p>
+
+<button class="hero-btn">
+    Explore Deals
+</button>
+```
+
+</section>
+
+<!-- Categories -->
+
+<section class="categories">
+
+```
+<button>👗 Fashion</button>
+<button>💄 Beauty</button>
+<button>👜 Accessories</button>
+<button>📱 Tech</button>
+<button>🏠 Home</button>
+```
+
+</section>
+
+<!-- Dynamic Products -->
+
+<section class="section-title">
+    🔥 Trending Deals Today
+</section>
+
+<div class="deal-container">
+
+{% if products %}
+
+```
+{% for product in products %}
+
+<div class="deal-card">
+
+    <img
+        src="{{ url_for('static', filename='uploads/' + product.image) }}"
+        alt="{{ product.title }}">
+
+    <h3>{{ product.title }}</h3>
+
+    <p>{{ product.price }}</p>
+
+    <a href="{{ product.affiliate_link }}" target="_blank">
+        <button>View Deal</button>
+    </a>
+
+</div>
+
+{% endfor %}
+```
+
+{% else %}
+
+```
+<div style="text-align:center;width:100%;padding:40px;">
+
+    <h3>No Products Yet</h3>
+
+    <p>
+        Add products from the Admin Panel.
+    </p>
+
+</div>
+```
+
+{% endif %}
+
+</div>
+
+<!-- Pinterest Inspiration -->
+
+<section class="section-title">
+    💕 Pinterest Inspiration
+</section>
+
+<div class="pinterest-grid">
+
+```
+<div class="pin-card">
+    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800">
+</div>
+
+<div class="pin-card">
+    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800">
+</div>
+
+<div class="pin-card">
+    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800">
+</div>
+
+<div class="pin-card">
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
+</div>
+```
+
+</div>
+
+<!-- Newsletter -->
+
+<section class="newsletter">
+
+```
+<h2>✨ Never Miss A Deal</h2>
+
+<p>
+    Get daily fashion and beauty deals.
+</p>
+
+<div class="newsletter-box">
+
+    <input
+        type="email"
+        placeholder="Enter your email">
+
+    <button>
+        Subscribe
+    </button>
+
+</div>
+```
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+```
+<h3>Digital Aesthetic Co</h3>
+
+<p>
+    Daily Fashion • Beauty • Lifestyle Deals
+</p>
+
+<p>
+    © 2026 All Rights Reserved
+</p>
+```
+
+</footer>
+
+<!-- Floating Pinterest Button -->
+
+<a href="#" class="pinterest-btn">
+    📌
+</a>
+
+</body>
+</html>
