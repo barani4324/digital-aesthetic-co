@@ -100,13 +100,6 @@
     🔥 Trending Deals Today
 </section>
 
-<div class="deal-container">
-
-{% if products %}
-
-```
-{% for product in products %}
-
 <div class="deal-card">
 
     <img
@@ -114,21 +107,21 @@
         alt="{{ product.title }}">
 
     <h3 class="product-title">
-    {{ product.title }}
-</h3>
+        {{ product.title }}
+    </h3>
 
-<p class="price">
-    ₹{{ product.price }}
-</p>
+    <p class="price">
+        ₹{{ product.price }}
+    </p>
 
-<a
-    href="{{ product.affiliate_link }}"
-    target="_blank"
-    class="deal-btn">
+    <a
+        href="{{ product.affiliate_link }}"
+        target="_blank"
+        class="deal-btn">
 
-    🛍️ Shop Now
+        🛍️ Shop Now
 
-</a>
+    </a>
 
 </div>
 
