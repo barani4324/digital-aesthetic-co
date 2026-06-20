@@ -104,9 +104,9 @@
         src="{{ url_for('static', filename='uploads/' + product.image) }}"
         alt="{{ product.title }}">
 
-    <h3>{{ product.title }}</h3>
+    <h3>₹{{ product.price }}</h3>
 
-    <p>{{ product.price }}</p>
+    <p>₹{{ product.price }}</p>
 
     <a href="{{ product.affiliate_link }}" target="_blank">
         <button>View Deal</button>
