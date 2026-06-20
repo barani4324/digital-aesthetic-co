@@ -1,61 +1,83 @@
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>Admin Panel</title>
 
-    <style>
+```
+<style>
 
-        body{
-            font-family:Arial,sans-serif;
-            background:#FFF5F7;
-            padding:30px;
-        }
+    body{
+        font-family:Arial,sans-serif;
+        background:#FFF5F7;
+        padding:30px;
+    }
 
-        h1{
-            color:#ff5c9d;
-        }
+    h1{
+        color:#ff5c9d;
+        margin-bottom:20px;
+    }
 
-        .btn{
-            background:#ff5c9d;
-            color:white;
-            padding:12px 20px;
-            border:none;
-            border-radius:8px;
-            text-decoration:none;
-        }
+    .btn{
+        background:#ff5c9d;
+        color:white;
+        padding:12px 20px;
+        border:none;
+        border-radius:8px;
+        text-decoration:none;
+        margin-right:10px;
+    }
 
-        table{
-            width:100%;
-            background:white;
-            margin-top:20px;
-            border-collapse:collapse;
-        }
+    table{
+        width:100%;
+        background:white;
+        margin-top:25px;
+        border-collapse:collapse;
+        border-radius:10px;
+        overflow:hidden;
+    }
 
-        th,td{
-            padding:15px;
-            border:1px solid #eee;
-            text-align:center;
-        }
+    th{
+        background:#ff5c9d;
+        color:white;
+    }
 
-        img{
-            width:80px;
-            border-radius:10px;
-        }
+    th,td{
+        padding:15px;
+        border:1px solid #eee;
+        text-align:center;
+    }
 
-        .delete{
-            background:red;
-            color:white;
-            padding:8px 12px;
-            border-radius:5px;
-            text-decoration:none;
-        }
+    img{
+        width:80px;
+        border-radius:10px;
+    }
 
-    </style>
+    .delete{
+        background:red;
+        color:white;
+        padding:8px 12px;
+        border-radius:5px;
+        text-decoration:none;
+    }
+
+    .edit{
+        background:#2196F3;
+        color:white;
+        padding:8px 12px;
+        border-radius:5px;
+        text-decoration:none;
+        margin-right:5px;
+    }
+
+</style>
+```
 
 </head>
 <body>
 
 <h1>Admin Dashboard</h1>
+
 <a href="/logout">
     <button style="
         background:red;
@@ -69,21 +91,26 @@
 </a>
 
 <a href="/add-product" class="btn">
-+ Add Product
+    + Add Product
 </a>
 
 <table>
 
+```
 <tr>
+    <th>ID</th>
     <th>Image</th>
     <th>Title</th>
     <th>Price</th>
-    <th>Action</th>
+    <th>Category</th>
+    <th>Actions</th>
 </tr>
 
 {% for product in products %}
 
 <tr>
+
+    <td>{{ product.id }}</td>
 
     <td>
         <img src="{{ url_for('static', filename='uploads/' + product.image) }}">
@@ -91,17 +118,34 @@
 
     <td>{{ product.title }}</td>
 
-    <td>{{ product.price }}</td>
+    <td>₹{{ product.price }}</td>
+
+    <td>{{ product.category }}</td>
 
     <td>
-        <a href="/delete/{{ product.id }}" class="delete">
-            Delete
+
+        <a
+            href="/edit/{{ product.id }}"
+            class="edit">
+
+            Edit
+
         </a>
+
+        <a
+            href="/delete/{{ product.id }}"
+            class="delete">
+
+            Delete
+
+        </a>
+
     </td>
 
 </tr>
 
 {% endfor %}
+```
 
 </table>
 

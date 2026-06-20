@@ -410,7 +410,6 @@ margin-bottom:15px;
 
 @media(max-width:768px){
 
-```
 nav form{
     width:100%;
 }
@@ -427,6 +426,4 @@ nav form input{
 .deal-card{
     width:95%;
 }
-```
-
 }
