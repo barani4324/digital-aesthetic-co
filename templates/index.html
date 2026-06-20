@@ -113,20 +113,22 @@
         src="{{ url_for('static', filename='uploads/' + product.image) }}"
         alt="{{ product.title }}">
 
-    <h3>{{ product.title }}</h3>
+    <h3 class="product-title">
+    {{ product.title }}
+</h3>
 
-    <p class="price">
-        ₹{{ product.price }}
-    </p>
+<p class="price">
+    ₹{{ product.price }}
+</p>
 
-    <a
-        href="{{ product.affiliate_link }}"
-        target="_blank"
-        class="deal-btn">
+<a
+    href="{{ product.affiliate_link }}"
+    target="_blank"
+    class="deal-btn">
 
-        View Deal 🛍️
+    🛍️ Shop Now
 
-    </a>
+</a>
 
 </div>
 
@@ -231,8 +233,6 @@
 
 </body>
 </html>
-
-
 </footer>
 
 <!-- Floating Pinterest Button -->

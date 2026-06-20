@@ -322,11 +322,18 @@ font-size:42px;
 column-count:2;
 }
 }
+.product-title{
+    font-size:20px;
+    font-weight:600;
+    margin-top:15px;
+    line-height:1.4;
+}
+
 .price{
-    font-size:22px;
+    font-size:28px;
     font-weight:bold;
     color:#ff4f9a;
-    margin:10px 0;
+    margin:12px 0;
 }
 
 .deal-btn{
@@ -337,9 +344,9 @@ column-count:2;
     padding:12px 24px;
     border-radius:30px;
     font-weight:bold;
+    transition:0.3s;
 }
 
 .deal-btn:hover{
     background:#ff3f95;
-    transform:translateY(-2px);
 }
