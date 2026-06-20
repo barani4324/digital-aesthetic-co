@@ -135,10 +135,6 @@ def delete_product(id):
 
     return redirect("/admin")
 
-@app.route("/logout")
-def logout():
-    session.pop("admin", None)
-    return redirect("/login")
 
 if __name__ == "__main__":
     app.run(debug=True)
