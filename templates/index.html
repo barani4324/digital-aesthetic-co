@@ -7,6 +7,15 @@
     <title>Digital Aesthetic Co</title>
 
 ```
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Aesthetic Co</title>
+
+```
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 ```
 
@@ -104,12 +113,19 @@
         src="{{ url_for('static', filename='uploads/' + product.image) }}"
         alt="{{ product.title }}">
 
-    <h3>₹{{ product.price }}</h3>
+    <h3>{{ product.title }}</h3>
 
-    <p>₹{{ product.price }}</p>
+    <p class="price">
+        ₹{{ product.price }}
+    </p>
 
-    <a href="{{ product.affiliate_link }}" target="_blank">
-        <button>View Deal</button>
+    <a
+        href="{{ product.affiliate_link }}"
+        target="_blank"
+        class="deal-btn">
+
+        View Deal 🛍️
+
     </a>
 
 </div>
@@ -204,6 +220,18 @@
     © 2026 All Rights Reserved
 </p>
 ```
+
+</footer>
+
+<!-- Floating Pinterest Button -->
+
+<a href="#" class="pinterest-btn">
+    📌
+</a>
+
+</body>
+</html>
+
 
 </footer>
 
