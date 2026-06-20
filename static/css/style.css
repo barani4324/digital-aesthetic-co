@@ -322,3 +322,24 @@ font-size:42px;
 column-count:2;
 }
 }
+.price{
+    font-size:22px;
+    font-weight:bold;
+    color:#ff4f9a;
+    margin:10px 0;
+}
+
+.deal-btn{
+    display:inline-block;
+    background:#ff5ea8;
+    color:white;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.deal-btn:hover{
+    background:#ff3f95;
+    transform:translateY(-2px);
+}
